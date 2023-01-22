@@ -18,6 +18,7 @@ function App() {
       <h1>Playlist Maker</h1>
         <a href={`${AUTH_ENDPOINT}?client_id=${process.env.CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`} >button</a>
 
+      {/* RENDERS HOME COMPONENT */}
       <Home/>
     </div>
     
