@@ -8,7 +8,6 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 
-
 // DEPENDENCIES
 const sequelize = new Sequelize(
     process.env.DB_NAME,
@@ -43,3 +42,5 @@ const testSequelize = async () => {
 }
 
 testSequelize();
+
+export default supabase;
