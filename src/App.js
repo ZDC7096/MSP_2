@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 import './App.css';
+import axios from axios;
 import supabase from "./config/supabaseClient"
 import Home from "./components/Home"
 import Test from "./components/Test"
@@ -35,6 +36,8 @@ const logout = () => {
   setToken("")
   window.localStorage.removeItem("token")
 }
+
+//Search Artist function using axios and react promises
 const searchArtists = async (e) => {
   e.preventDefault()
   const {data} = await axios.get("https://api.spotify.com/v1/search", {
@@ -70,7 +73,7 @@ const renderArtists = () => {
       : <button onClick={logout}>Logout</button>}
 
       {token ?
-              <form onSubmit={searchArtists}>
+             <form onSubmit={searchArtists}>
                   <input type="text" onChange={e => setSearchKey(e.target.value)}/>
                   <button type={"submit"}>Search</button>
                 </form>
