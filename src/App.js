@@ -15,15 +15,16 @@ const RESPONSE_TYPE = "token"
 function App() {
   return (
     <div className="App">
-
-      {/* RENDERS HOME COMPONENT */}
-      <Home/>
-    </div>
+      <header className="App-header">
+      <h1>Spotify App</h1>
+      <a href={`${AUTH_ENDPOINT}?client_id=${process.env.REACT_APP_CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`} >Login to Spotify</a>
+      </header>
+      </div>
+  )
+}
     
 
 
-  );
-  }
-
-
+ 
 export default App;
+
