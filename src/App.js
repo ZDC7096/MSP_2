@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route, Link, Router, } from "react-router-dom"
 //require('dotenv').config();
 
 //spotify links
-const REDIRECT_URI="http://localhost:3000/"
+const REDIRECT_URI="http://localhost:3000"
 const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
 const RESPONSE_TYPE = "token"
 
