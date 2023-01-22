@@ -1,8 +1,8 @@
 import './App.css';
 import supabase from "./config/supabaseClient"
 import Home from "./components/Home"
-import Test from "./components/Test"
 import { BrowserRouter, Routes, Route, Link, Router, } from "react-router-dom"
+import Default from './components/Default';
 //package imports/requirements
 //require('dotenv').config();
 

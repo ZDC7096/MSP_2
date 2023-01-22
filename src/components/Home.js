@@ -1,5 +1,6 @@
 import supabase from "../config/supabaseClient"
 import {useEffect, useState} from 'react'
+import Default from "./Default"
 
 
 const Home = () => {
@@ -33,6 +34,7 @@ const Home = () => {
     return (
 
         //Displays Data on page
+      <Default>
       <div className="page home">
         {fetchError && (<p>{fetchError}</p>)}
         {songs && (
@@ -47,6 +49,7 @@ const Home = () => {
           </div>
         )}
       </div>
+      </Default>
     )
   }
 export default Home;

@@ -1,4 +1,3 @@
-import supabase from "../config/supabaseClient"
 import {useEffect, useState} from 'react'
 
 function Verify(){
@@ -9,3 +8,5 @@ function Verify(){
         </>
     )
 }
+
+export default Verify;
