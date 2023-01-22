@@ -1,6 +1,7 @@
+import React from 'react';
+import axios from 'axios';
 import {useEffect, useState} from 'react';
 import './App.css';
-import axios from axios;
 import supabase from "./config/supabaseClient"
 import Home from "./components/Home"
 import Test from "./components/Test"
@@ -17,6 +18,8 @@ const RESPONSE_TYPE = "token"
 //pass token and split token as substrings after authenticating to Spotiy
 
 const [token, setToken] = useState("")
+const [searchKey, setSearchKey] = useState("")
+const [artists, setArtists] = useState([])
 
 useEffect(() => {
   const hash = window.location.hash
@@ -61,7 +64,6 @@ const renderArtists = () => {
       </div>
   ))
 }
-
 
 
   return (
