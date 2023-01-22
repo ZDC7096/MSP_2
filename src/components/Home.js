@@ -15,10 +15,13 @@ const Home = () => {
           .from('playlist')
           .select()
         
+          //CATCHES DATABASE ERROR
         if (error) {
           setFetchError('Could not fetch the songs')
           setSongs(null)
         }
+
+        //SETS DATA =songs variable
         if (data) {
             console.log(data)
           setSongs(data)
@@ -31,14 +34,16 @@ const Home = () => {
     }, [])
   
     return (
+
+        //Displays Data on page
       <div className="page home">
         {fetchError && (<p>{fetchError}</p>)}
         {songs && (
           <div className="songs">
             {/* order-by buttons */}
-            <div className="smoothie-grid">
-              {songs.map(smoothie => (
-                <p>{smoothie.song_name}</p>
+            <div className="song-grid">
+              {songs.map(song => (
+                <p>{song.song_name}</p>
               ))}
             </div>
             
