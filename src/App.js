@@ -35,6 +35,8 @@ useEffect(() => {
   setToken(token)
 }, [])
 
+//logout function
+
 const logout = () => {
   setToken("")
   window.localStorage.removeItem("token")
@@ -55,6 +57,7 @@ const searchArtists = async (e) => {
 
   setArtists(data.artists.items)
 }
+//Render Artis results
 
 const renderArtists = () => {
   return artists.map(artist => (
