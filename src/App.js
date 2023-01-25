@@ -2,9 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import {useEffect, useState} from 'react';
 import './App.css';
-import supabase from "./config/supabaseClient"
-import Home from "./components/Home"
-import Test from "./components/Test"
 import { BrowserRouter, Routes, Route, Link, Router, } from "react-router-dom"
 //package imports/requirements
 //require('dotenv').config();
@@ -88,11 +85,6 @@ const renderArtists = () => {
 
                 {renderArtists()}
       </header>
-
-
-      <Home/>
-      <Create/>
-
       </div>
   )
 }
