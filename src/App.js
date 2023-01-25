@@ -88,11 +88,6 @@ const renderArtists = () => {
 
                 {renderArtists()}
       </header>
-
-
-      <Home/>
-      <Create/>
-
       </div>
   )
 }
