@@ -4,14 +4,22 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
+import supabase from "../config/supabaseClient"
 
 function SongCard(props) {
-    console.log(props)
+
+    const importData = async () => {
+            const { data, error} =  await supabase
+            .from('playlist')
+            .insert([{artist: props.item.artistName, song_name: props.item.trackName, song_picture: props.item.artworkUrl100 }])
+            .select()
+        }
+
 
     return(
-        
+        <div>
         <Card sx={{maxWidth: 100}}>
-            <CardActionArea>
+            <CardActionArea  onClick={importData}>
                 <CardMedia
                     component="img"
                     height="100"
@@ -26,6 +34,7 @@ function SongCard(props) {
                 </CardContent>
             </CardActionArea>
         </Card>
+        </div>
     )
 }
 
