@@ -3,6 +3,8 @@ import axios from 'axios';
 import {useEffect, useState} from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route, Link, Router, } from "react-router-dom"
+import {AppBar, LibraryMusicIcon} from "@mui/material"
+
 //package imports/requirements
 //require('dotenv').config();
 
@@ -55,7 +57,6 @@ const searchArtists = async (e) => {
   setArtists(data.artists.items)
 }
 //Render Artis results
-
 const renderArtists = () => {
   return artists.map(artist => (
       <div key={artist.id}>
@@ -67,6 +68,7 @@ const renderArtists = () => {
 
 
   return (
+    
     <div className="App">
       <header className="App-header">
       <h1>Spotify App</h1>
