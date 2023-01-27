@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Container, Nav, Form, Row, Col, Button } from 'react-bootstrap';
 
 
-const Home = () => {
+const DisplaySongs = () => {
     const [fetchError, setFetchError] = useState(null)
     const [songs, setSongs] = useState(null)
   
@@ -40,7 +40,7 @@ const Home = () => {
         {fetchError && (<p>{fetchError}</p>)}
         {songs && (
           <div className="songs">
-            {/* order-by buttons */}
+           
             <div className="song-grid">
               {songs.map(song => (
                 <p>{song.song_name}</p>
@@ -52,4 +52,4 @@ const Home = () => {
       </div>
     )
   }
-export default Home;
+export default DisplaySongs;
