@@ -13,8 +13,8 @@ function Gallery(props) {
     })
 
     return (
-        <div>
-            <Box>
+        <div >
+            <Box >
                 <Grid container spacing={3} justify="left">
                     {display}
                 </Grid>
