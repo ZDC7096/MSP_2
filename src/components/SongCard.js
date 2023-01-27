@@ -1,10 +1,20 @@
 import {useState} from 'react'
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions } from '@mui/material';
+import { createTheme, Grid, ThemeProvider } from '@mui/material'
+import { Box, Card, CardContent, CardMedia, Typography, Button } from '@mui/material';
+
 import supabase from "../config/supabaseClient"
+
+const theme = createTheme()
+
+theme.typography.h3 = {
+    fontSize: 11
+}
+
+theme.typography.h4 = {
+    fontSize: 10
+}
+
+
 
 function SongCard(props) {
 
@@ -17,24 +27,35 @@ function SongCard(props) {
 
 
     return(
-        <div>
-        <Card sx={{maxWidth: 100}}>
-            <CardActionArea  onClick={importData}>
-                <CardMedia
-                    component="img"
-                    height="100"
-                    image= {props.item.artworkUrl100}
-                    alt ={props.item.artistName}
-                />
-                <CardContent>
-                    {props.item.trackName}
-                </CardContent>
-                <CardContent>
-                    {props.item.artistName}
-                </CardContent>
-            </CardActionArea>
-        </Card>
-        </div>
+                <Grid item xs={4}>
+                    <Card sx={{ display: 'flex', height: 100 }}>
+                        <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                            <CardContent sx={{ flex: '1 0 auto', height: 33 }}>
+                                <ThemeProvider theme={theme}>
+                                <Typography component="div" variant="h3">
+                                    {props.item.trackName}
+                                </Typography>
+                                <Typography variant="h4" color="text.secondary" component="div">
+                                    {props.item.artistName}
+                                </Typography>
+                                </ThemeProvider>
+                            </CardContent>
+                        <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
+                            <Button onClick={importData} variant="outlined" sx={{height:27.5}} >
+                                Add
+                            </Button>
+                        </Box>
+                        </Box>
+                            <CardMedia
+                                component="img"
+                                sx={{ width: 100,
+                                    height: 100,
+                                    marginLeft: 'auto'}}
+                                image={props.item.artworkUrl100}
+                                alt={props.item.trackName}
+                            />
+                    </Card>
+                </Grid>
     )
 }
 
