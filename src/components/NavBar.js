@@ -9,6 +9,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
+import Search from "./Search"
+import { BrowserRouter as Router, Routes, Route, Link} from "react-router-dom"
+import PlaylistView from './PlaylistView';
 
 const pages = ['Search', 'Playlists', 'Contact'];
 
@@ -32,7 +35,9 @@ function NavBar (){
   };
 
   return (
+    <Router>
     <AppBar position="static">
+
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           
@@ -85,7 +90,7 @@ function NavBar (){
             >
               
                 <MenuItem onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">Search</Typography>
+                  <Typography textAlign="center"><Link to="/search">Search</Link></Typography>
                 </MenuItem>
                 <MenuItem onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">Playlist</Typography>
@@ -116,15 +121,29 @@ function NavBar (){
             PLAYLIST MAKER
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
+            
               <Button
-                key={page}
+                component={Link} to="/search"
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page}
+                Search
               </Button>
-            ))}
+              <Button
+                component={Link} to="/playlistview"
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                Playlists
+              </Button>
+              <Button
+                component={Link} to="/contact"
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                Contact
+              </Button>
+            
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
@@ -150,7 +169,17 @@ function NavBar (){
           </Box>
         </Toolbar>
       </Container>
+      
+       
+     
     </AppBar>
+    
+ <Routes>  
+ <Route path="/search" element={<Search />} />
+ <Route path="/playlistview" element={<PlaylistView />} />
+</Routes>
+</Router>
+
   );
 }
 
