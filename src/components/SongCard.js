@@ -67,4 +67,4 @@ function SongCard(props) {
     )
 }
 
-export default SongCard
+export default SongCard;
