@@ -35,7 +35,7 @@ function NavBar (){
   };
 
   return (
-    <Router>
+  <Router>
     <AppBar position="static">
 
       <Container maxWidth="xl">
@@ -129,18 +129,18 @@ function NavBar (){
               >
                 Search
               </Button>
-              <Button
-                component={Link} to="/playlistview"
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
+                <Button
+                  component={Link} to="/playlistview"
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: 'white', display: 'block' }}
+                >
                 Playlists
               </Button>
-              <Button
-                component={Link} to="/contact"
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
+                <Button
+                  component={Link} to="/contact"
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: 'white', display: 'block' }}
+                >
                 Contact
               </Button>
             
@@ -174,13 +174,13 @@ function NavBar (){
      
     </AppBar>
     
- <Routes>  
- <Route path="/search" element={<Search />} />
- <Route path="/playlistview" element={<PlaylistView />} />
-</Routes>
-</Router>
+    <Routes>  
+        <Route path="/search" element={<Search />} />
+        <Route path="/playlistview" element={<PlaylistView />} />
+    </Routes>
+  </Router>
 
   );
 }
 
-export default NavBar
+export default NavBar;
