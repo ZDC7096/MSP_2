@@ -33,17 +33,26 @@ function SongCard(props) {
             fontSize: 10
         }
 
+        theme.typography.h3 = {
+            fontSize: 11,
+            color: '#FAF9F6'
+        }
+
+        theme.typography.h4 = {
+            fontSize: 10,
+            color: '#FAF9F6'
+        }
 
     return(
-        <Grid item xs={4}>
-            <Card sx={{ display: 'flex', height: 100 }}>
+        <Grid item xs={"auto"}>
+            <Card style={{backgroundColor: "#121212"}} sx={{ display: 'flex', height: 100, maxWidth: 275, minWidth: 275 }}>
                 <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                     <CardContent sx={{ flex: '1 0 auto', height: 33 }}>
                         <ThemeProvider theme={theme}>
                         <Typography component="div" variant="h3">
                             {props.item.trackName}
                         </Typography>
-                        <Typography variant="h4" color="text.secondary" component="div">
+                        <Typography variant="h4"  component="div">
                             {props.item.artistName}
                         </Typography>
                         </ThemeProvider>

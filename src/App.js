@@ -11,20 +11,10 @@ import NavBar from './components/NavBar'
 
 function App() {
   return(
-<>
+    
+<div style={{backgroundColor: "#464544"}}>
 <NavBar/>
- {/* <Router>
-
-<Routes>  
-          <Route path="/" element={<NavBar/>}/>
-          <Route path="/search" element={<Search />} />
-          <Route path="/playlistview" element={<PlaylistView />} />
-        </Routes>
-     </Router> */}
-</>
-
-
-
+</div>
 
   )
 }

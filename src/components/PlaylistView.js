@@ -1,12 +1,21 @@
 import {useState, useEffect} from 'react'
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions } from '@mui/material';
+import { Button, Card, Box, createTheme, Typography, CardContent, CardMedia, Grid, ThemeProvider } from '@mui/material';
 import supabase from "../config/supabaseClient"
+import Gallery from "./Gallery"
 
-const React = require('react')
+const theme = createTheme()
+
+
+theme.typography.h3 = {
+  fontSize: 11,
+  color: '#FAF9F6'
+}
+
+theme.typography.h4 = {
+  fontSize: 10,
+  color: '#FAF9F6'
+}
+
 
 function PlaylistView() {
     const [fetchError, setFetchError] = useState(null)
@@ -27,7 +36,7 @@ function PlaylistView() {
   
           //SETS DATA =songs variable
           if (data) {
-              console.log(data)
+              
             setSongs(data)
             setFetchError(null)
           }
@@ -38,37 +47,54 @@ function PlaylistView() {
       }, [])
     
     return(
-        <div>
+      
+        <div style={{minHeight: "100vh"}}>
 {songsBruh && (
     <div>
+      <Grid container spacing={3} justify="left">
 {songsBruh.map(song =>(
 
-        <div>
-            <Card sx={{maxWidth: 100}}>
-                <CardActionArea>
+
+        <Grid item xs={"auto"}>
+            <Card style={{backgroundColor: "#121212"}} sx={{ display: 'flex', height: 100, maxWidth: 275, minWidth: 275 }}>
+                <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                    <CardContent sx={{ flex: '1 0 auto', height: 33 }}>
+                        <ThemeProvider theme={theme}>
+                        <Typography component="div" variant="h3">
+                            {song.song_name}
+                        </Typography>
+                        <Typography variant="h4"  component="div">
+                            {song.artist}
+                        </Typography>
+                        </ThemeProvider>
+                    </CardContent>
+                <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
+                    <Button  variant="outlined" sx={{height:27.5, color:"red", borderColor: "red"}} >
+                        Remove
+                    </Button>
+                </Box>
+                </Box>
                     <CardMedia
                         component="img"
-                        height="100"
-                        image= {song.song_picture}
-                        alt ={song.artist}
+                        sx={{ width: 100,
+                            height: 100,
+                            marginLeft: 'auto'}}
+                        image={song.song_picture}
+                        alt={song.song_name}
                     />
-                    <CardContent>
-                        
-                        {song.song_name}
-                    </CardContent>
-                    <CardContent>
-                        {song.artist}
-                    </CardContent>
-                </CardActionArea>
             </Card>
-        </div>
+          </Grid>
+
 
 
 ))}
+</Grid>
 </div>
 )}
-        </div>
 
+        </div>
+        
+       
     )
 }
 

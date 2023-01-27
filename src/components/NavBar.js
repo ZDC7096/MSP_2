@@ -12,6 +12,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Search from "./Search"
 import { BrowserRouter as Router, Routes, Route, Link} from "react-router-dom"
 import PlaylistView from './PlaylistView';
+import App from '../App.js'
 
 const pages = ['Search', 'Playlists', 'Contact'];
 
@@ -173,7 +174,7 @@ function NavBar (){
        
      
     </AppBar>
-    
+
  <Routes>  
  <Route path="/search" element={<Search />} />
  <Route path="/playlistview" element={<PlaylistView />} />

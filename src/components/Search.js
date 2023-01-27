@@ -32,9 +32,9 @@ function Search(){
     }
 
     return(
-        <div>
+        <div id="yo" style={{height: "100vh"}}>
 			<SearchBar handleSearch = {handleSearch}/>
-			{message}
+			
 			<DataContext.Provider value={data}>
 				<Gallery />
 			</DataContext.Provider>
