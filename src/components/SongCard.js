@@ -35,8 +35,8 @@ function SongCard(props) {
 
 
     return(
-        <Grid item xs={4}>
-            <Card sx={{ display: 'flex', height: 100 }}>
+        <Grid item xs={3}>
+            <Card sx={{ display: 'flex', height: 100, maxWidth: 275, minWidth: 200 }}>
                 <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                     <CardContent sx={{ flex: '1 0 auto', height: 33 }}>
                         <ThemeProvider theme={theme}>

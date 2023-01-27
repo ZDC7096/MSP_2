@@ -12,6 +12,7 @@ import NavBar from './components/NavBar'
 function App() {
   return(
 <>
+<<<<<<< Updated upstream
 <NavBar/>
  {/* <Router>
 
@@ -21,6 +22,9 @@ function App() {
           <Route path="/playlistview" element={<PlaylistView />} />
         </Routes>
      </Router> */}
+=======
+<Search/>
+>>>>>>> Stashed changes
 </>
 
 

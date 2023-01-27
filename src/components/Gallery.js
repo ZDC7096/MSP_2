@@ -14,9 +14,7 @@ function Gallery(props) {
 
     return (
         <div>
-            <Box sx={{
-                maxWidth: 1000
-            }}>
+            <Box>
                 <Grid container spacing={3} justify="left">
                     {display}
                 </Grid>
