@@ -44,6 +44,7 @@ function SongCard(props) {
         }
 
     return(
+        
         <Grid item xs={"auto"}>
             <Card style={{backgroundColor: "#121212"}} sx={{ display: 'flex', height: 100, maxWidth: 275, minWidth: 275 }}>
                 <Box sx={{ display: 'flex', flexDirection: 'column' }}>
@@ -73,6 +74,7 @@ function SongCard(props) {
                     />
             </Card>
         </Grid>
+        
     )
 }
 
