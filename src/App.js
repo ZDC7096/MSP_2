@@ -8,9 +8,11 @@ import NavBar from './components/NavBar'
 
 function App() {
   return(
-    <>
-      <NavBar/>
-    </>
+    
+<div style={{backgroundColor: "#464544"}}>
+<NavBar/>
+</div>
+
   )
 }
     
