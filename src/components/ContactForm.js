@@ -1,3 +1,4 @@
+import React from 'react';
 function ContactForm() {
     const [name, setName] = React.useState('');
     const [email, setEmail] = React.useState('');
@@ -43,4 +44,4 @@ function ContactForm() {
     );
   }
 
-  export default ContactForm;
+  export default Contact;
