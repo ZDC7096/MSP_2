@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+
 const ContactForm = () => {
   const [mailerState, setMailerState] = useState({
     name: "",
@@ -14,7 +15,6 @@ const ContactForm = () => {
       [e.target.name]: e.target.value,
     }));
   }
-
 
   const submitEmail = async (e) => {
     e.preventDefault();
@@ -35,9 +35,7 @@ const ContactForm = () => {
         });
       });
   };
-
-
-
+  
     return (
       <div className="container mt-5">
         <h2 className="mb-3">Contact the Developers</h2>
@@ -84,8 +82,4 @@ const ContactForm = () => {
   }
 
 
-   
-
-
-
-  export default ContactForm
+  export default ContactForm;
