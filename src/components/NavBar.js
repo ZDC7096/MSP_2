@@ -59,7 +59,7 @@ function NavBar (){
               textDecoration: 'none',
             }}
           >
-            PLAYLIST MAKER
+            GLOBAL PLAYLIST
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -96,7 +96,7 @@ function NavBar (){
                   <Typography textAlign="center"><Link to="/search">Search</Link></Typography>
                 </MenuItem>
                 <MenuItem onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">Playlist</Typography>
+                  <Typography textAlign="center"><Link to="/playlistview">Playlists</Link></Typography>
                 </MenuItem>
                 <MenuItem onClick={handleCloseNavMenu}>
                   <Typography textAlign="center"><Link to="/contact">Contact</Link></Typography>

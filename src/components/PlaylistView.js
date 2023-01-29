@@ -49,7 +49,7 @@ function PlaylistView() {
     return(
       
       <div id="yop" style={{minHeight: "100vh", backgroundColor: "#FCFCFC", marginLeft: "200px", marginRight:"200px", paddingTop:"20px"}}>
-        <h3>Your Playlist</h3>
+        <h3>Our Playlist</h3>
 {songsBruh && (
     <div>
       <Grid container spacing={3} justify="left">
