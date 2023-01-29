@@ -1,5 +1,4 @@
 import React from 'react';
-import bootstrap from 'bootstrap';
 
 const ContactForm = () => {
     const [formStatus, setFormStatus] = React.useState('Send')
@@ -36,7 +35,7 @@ const ContactForm = () => {
             </label>
             <textarea className="form-control" id="message" required />
           </div>
-          <button className="btn btn-danger" type="submit">
+          <button className="btn btn-primary" type="submit">
             {formStatus}
           </button>
         </form>
