@@ -1,46 +1,91 @@
 import React from 'react';
-
+import { useState } from 'react';
 const ContactForm = () => {
-    const [formStatus, setFormStatus] = React.useState('Send')
-    const onSubmit = (e) => {
-      e.preventDefault()
-      setFormStatus('Submitting...')
-      const { name, email, message } = e.target.elements
-      let conFom = {
-        name: name.value,
-        email: email.value,
-        message: message.value,
-      }
-      console.log(conFom)
-    }
+  const [mailerState, setMailerState] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+
+  function handleStateChange(e) {
+    setMailerState((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  }
+
+
+  const submitEmail = async (e) => {
+    e.preventDefault();
+    console.log({ mailerState });
+    const response = await fetch("http://localhost:3000/send", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({ mailerState }),
+    })
+      .then((res) => res.json())
+      .then(() => {
+        setMailerState({
+          email: "",
+          name: "",
+          message: "",
+        });
+      });
+  };
+
+
+
     return (
       <div className="container mt-5">
         <h2 className="mb-3">Contact the Developers</h2>
-        <form onSubmit={onSubmit}>
+        <form onSubmit={submitEmail}>
           <div className="mb-3">
             <label className="form-label" htmlFor="name">
               Name
             </label>
-            <input className="form-control" type="text" id="name" required />
+            <input
+           placeholder="Name"
+           onChange={handleStateChange}
+           name="name"
+           value={mailerState.name}
+         />
           </div>
           <div className="mb-3">
             <label className="form-label" htmlFor="email">
               Email
             </label>
-            <input className="form-control" type="email" id="email" required />
+            <input
+           placeholder="Email"
+           onChange={handleStateChange}
+           name="email"
+           value={mailerState.email}
+         />
           </div>
           <div className="mb-3">
             <label className="form-label" htmlFor="message">
               Message
             </label>
-            <textarea className="form-control" id="message" required />
+            <textarea
+           placeholder="Message"
+           onChange={handleStateChange}
+           name="message"
+           value={mailerState.message}
+         />
           </div>
           <button className="btn btn-primary" type="submit">
-            {formStatus}
+            Submit
           </button>
         </form>
       </div>
     )
   }
 
-  export default ContactForm;
+
+   
+
+
+
+  export default ContactForm
