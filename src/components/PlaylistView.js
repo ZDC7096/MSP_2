@@ -1,10 +1,8 @@
 import {useState, useEffect} from 'react'
 import { Button, Card, Box, createTheme, Typography, CardContent, CardMedia, Grid, ThemeProvider } from '@mui/material';
 import supabase from "../config/supabaseClient"
-import Gallery from "./Gallery"
 
 const theme = createTheme()
-
 
 theme.typography.h3 = {
   fontSize: 11,
@@ -55,7 +53,7 @@ function PlaylistView() {
       <Grid container spacing={3} justify="left">
 
    {/* MAPPING DATA INTO INDIVIDUAL CARDS      */}
-{songsBruh.map(song =>(
+    {songsBruh.map(song =>(
 
 
         <Grid item xs={"auto"}>

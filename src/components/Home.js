@@ -1,4 +1,3 @@
-import NavBar from "./NavBar"
 import { useState } from "react";
 import { Typography, createTheme, ThemeProvider, Grid } from '@mui/material';
 import ProfileCard from "./ProfileCard";

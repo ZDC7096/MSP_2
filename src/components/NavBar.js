@@ -9,12 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import Search from "./Search"
-import ContactForm from './ContactForm';
-import { BrowserRouter as Router, Routes, Route, Link} from "react-router-dom"
-import PlaylistView from './PlaylistView';
-import App from '../App.js'
-import Home from "./Home"
+import { BrowserRouter as Link} from "react-router-dom"
 
 const pages = ['Search', 'Playlists', 'Contact'];
 
