@@ -9,9 +9,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import { BrowserRouter as Link} from "react-router-dom"
+import { Link} from "react-router-dom"
 
-const pages = ['Search', 'Playlists', 'Contact'];
 
 function NavBar (){
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -20,10 +19,7 @@ function NavBar (){
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
+  
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };

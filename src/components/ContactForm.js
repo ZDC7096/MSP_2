@@ -37,6 +37,7 @@ const ContactForm = () => {
   };
   
     return (
+      <div id="yo" style={{minHeight: "100vh", backgroundColor: "#FCFCFC", marginLeft: "10vw", marginRight:"10vw", paddingTop:"20px"}}>
       <div className="container mt-5">
         <h2 className="mb-3">Contact the Developers</h2>
         <form onSubmit={submitEmail}>
@@ -44,6 +45,7 @@ const ContactForm = () => {
             <label className="form-label" htmlFor="name">
               Name
             </label>
+            <div>
             <input
            placeholder="Name"
            onChange={handleStateChange}
@@ -51,32 +53,38 @@ const ContactForm = () => {
            value={mailerState.name}
          />
           </div>
+          </div>
           <div className="mb-3">
             <label className="form-label" htmlFor="email">
               Email
             </label>
+            <div>
             <input
            placeholder="Email"
            onChange={handleStateChange}
            name="email"
            value={mailerState.email}
          />
+         </div>
           </div>
           <div className="mb-3">
             <label className="form-label" htmlFor="message">
               Message
             </label>
+            <div>
             <textarea
            placeholder="Message"
            onChange={handleStateChange}
            name="message"
            value={mailerState.message}
          />
+         </div>
           </div>
           <button className="btn btn-primary" type="submit">
             Submit
           </button>
         </form>
+      </div>
       </div>
     )
   }
