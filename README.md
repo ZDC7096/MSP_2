@@ -62,7 +62,7 @@ $ npm start
 
 ## Download
 
-You can [clone](https://github.com/ZDC7096/MSP_2) the latest installable version of Markdownify for Windows, macOS and Linux.
+You can [clone](https://github.com/ZDC7096/MSP_2) the latest installable version of Global playlist for Windows, macOS and Linux.
 
 ## Support
 
