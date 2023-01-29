@@ -35,7 +35,7 @@ function Search(){
         <>
         
 
-        <div id="yo" style={{minHeight: "100vh", backgroundColor: "#FCFCFC", marginLeft: "200px", marginRight:"200px", paddingTop:"20px"}}>
+        <div id="yo" style={{minHeight: "100vh", backgroundColor: "#FCFCFC", marginLeft: "10vw", marginRight:"10vw", paddingTop:"20px"}}>
         
             <div id="tester" style={{display:"flex", justifyContent:"center"}}>
                  <SearchBar handleSearch = {handleSearch}/>
