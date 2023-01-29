@@ -14,6 +14,7 @@ import ContactForm from './ContactForm';
 import { BrowserRouter as Router, Routes, Route, Link} from "react-router-dom"
 import PlaylistView from './PlaylistView';
 import App from '../App.js'
+import Home from "./Home"
 
 const pages = ['Search', 'Playlists', 'Contact'];
 
@@ -37,7 +38,7 @@ function NavBar (){
   };
 
   return (
-  <Router>
+    
     <AppBar position="static">
 
       <Container maxWidth="xl">
@@ -176,12 +177,7 @@ function NavBar (){
      
     </AppBar>
 
- <Routes>  
- <Route path="/search" element={<Search />} />
- <Route path="/playlistview" element={<PlaylistView />} />
- <Route path="/contact" element={<ContactForm />} />
-</Routes>
-</Router>
+
 
   );
 }

@@ -32,13 +32,23 @@ function Search(){
     }
 
     return(
-        <div id="yo" style={{height: "100vh"}}>
-			<SearchBar handleSearch = {handleSearch}/>
+        <>
+        
+
+        <div id="yo" style={{minHeight: "100vh", backgroundColor: "#FCFCFC", marginLeft: "200px", marginRight:"200px", paddingTop:"20px"}}>
+        
+            <div id="tester" style={{display:"flex", justifyContent:"center"}}>
+                 <SearchBar handleSearch = {handleSearch}/>
+            </div>
 			
+			<div style={{paddingTop: "50px"}}>
 			<DataContext.Provider value={data}>
 				<Gallery />
 			</DataContext.Provider>
+            </div>
+
 		</div>
+        </>
     )
 }
 
