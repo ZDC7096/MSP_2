@@ -1,7 +1,7 @@
 
 <h1 align="center">
 
-  Global Playlsit
+  [Global Playlsit](https://globalplaylist.vercel.app/)
   <br>
 </h1>
 
