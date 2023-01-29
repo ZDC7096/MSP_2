@@ -98,7 +98,7 @@ function NavBar (){
                   <Typography textAlign="center">Playlist</Typography>
                 </MenuItem>
                 <MenuItem onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center"><Link to="/contact">Contact<Link/></Typography>
+                  <Typography textAlign="center"><Link to="/contact">Contact</Link></Typography>
                 </MenuItem>
               
             </Menu>
@@ -179,6 +179,7 @@ function NavBar (){
  <Routes>  
  <Route path="/search" element={<Search />} />
  <Route path="/playlistview" element={<PlaylistView />} />
+ <Route path="/contact" element={<ContactForm />} />
 </Routes>
 </Router>
 

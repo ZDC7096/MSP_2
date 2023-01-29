@@ -1,47 +1,47 @@
 import React from 'react';
-function ContactForm() {
-    const [name, setName] = React.useState('');
-    const [email, setEmail] = React.useState('');
-    const [message, setMessage] = React.useState('');
-  
-    function handleSubmit(event) {
-      event.preventDefault();
-      console.log('name:', name);
-      console.log('email:', email);
-      console.log('message:', message);
+import bootstrap from 'bootstrap';
+
+const ContactForm = () => {
+    const [formStatus, setFormStatus] = React.useState('Send')
+    const onSubmit = (e) => {
+      e.preventDefault()
+      setFormStatus('Submitting...')
+      const { name, email, message } = e.target.elements
+      let conFom = {
+        name: name.value,
+        email: email.value,
+        message: message.value,
+      }
+      console.log(conFom)
     }
-  
     return (
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">Name</label>
-          <input
-            id="name"
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input
-            id="email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="message">Message</label>
-          <textarea
-            id="message"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-          />
-        </div>
-        <button type="submit">Submit</button>
-      </form>
-    );
+      <div className="container mt-5">
+        <h2 className="mb-3">Contact the Developers</h2>
+        <form onSubmit={onSubmit}>
+          <div className="mb-3">
+            <label className="form-label" htmlFor="name">
+              Name
+            </label>
+            <input className="form-control" type="text" id="name" required />
+          </div>
+          <div className="mb-3">
+            <label className="form-label" htmlFor="email">
+              Email
+            </label>
+            <input className="form-control" type="email" id="email" required />
+          </div>
+          <div className="mb-3">
+            <label className="form-label" htmlFor="message">
+              Message
+            </label>
+            <textarea className="form-control" id="message" required />
+          </div>
+          <button className="btn btn-danger" type="submit">
+            {formStatus}
+          </button>
+        </form>
+      </div>
+    )
   }
 
-  export default Contact;
+  export default ContactForm;
