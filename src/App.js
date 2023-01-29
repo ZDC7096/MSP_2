@@ -1,7 +1,9 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link} from "react-router-dom"
 import './App.css';
 import Search from './components/Search'
 import PlaylistView from './components/PlaylistView';
+import ContactForm from './components/ContactForm';
 import DisplaySongs from './components/DisplaySongs';
 import NavBar from './components/NavBar'
 import Home from './components/Home'
@@ -17,6 +19,7 @@ function App() {
 <Route path="/" element={<Home/>}/>
 <Route path="/search" element={<Search />} />
 <Route path="/playlistview" element={<PlaylistView />} />
+<Route path="/contact" element={<ContactForm />} />
 </Routes>
 </Router>
 </div>
