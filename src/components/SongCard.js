@@ -35,17 +35,18 @@ function SongCard(props) {
 
         theme.typography.h3 = {
             fontSize: 11,
-            color: '#FAF9F6'
+            color: '#000000'
         }
 
         theme.typography.h4 = {
             fontSize: 10,
-            color: '#FAF9F6'
+            color: '#000000'
         }
 
     return(
+        
         <Grid item xs={"auto"}>
-            <Card style={{backgroundColor: "#121212"}} sx={{ display: 'flex', height: 100, maxWidth: 275, minWidth: 275 }}>
+            <Card style={{backgroundColor: "#F3F3F3"}} sx={{ display: 'flex', height: 100, maxWidth: 275, minWidth: 275 }}>
                 <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                     <CardContent sx={{ flex: '1 0 auto', height: 33 }}>
                         <ThemeProvider theme={theme}>
@@ -73,6 +74,7 @@ function SongCard(props) {
                     />
             </Card>
         </Grid>
+        
     )
 }
 

@@ -6,7 +6,7 @@ function SearchBar(props) {
     
 
     return (
-        <form onSubmit={(e) => props.handleSearch(e, searchTerm)}>
+        <form onSubmit={(e) => props.handleSearch(e, searchTerm)} style={{margin:"auto"}}>
 
             <TextField id="outlined-basic" label="Search" variant="outlined" type="text" 
                 sx={{height:"50px"}}
