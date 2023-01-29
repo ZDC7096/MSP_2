@@ -1,6 +1,6 @@
 import NavBar from "./NavBar"
 import { useState } from "react";
-import { Typography, createTheme, ThemeProvider } from '@mui/material';
+import { Typography, createTheme, ThemeProvider, Grid } from '@mui/material';
 import ProfileCard from "./ProfileCard";
 
 
@@ -19,7 +19,14 @@ function Home(props) {
       name: "Jonathan Kishi",
       description: "Student of the SDSU/ThriveDX digital skills bootcamp and part time busser at BJ's", 
       gitHub: "https://github.com/Jkishi6"
-   }
+   }, 
+   {
+      imgAlt: "Picture of Didac Fernandez", 
+      img: "https://i.ytimg.com/vi/hAsZCTL__lo/mqdefault.jpg",
+      name: "Didac Fernandez",
+      description: "Sr. Architect at Insieme CloudNet and student at the SDSU software development bootcamp", 
+      gitHub: "https://github.com/didacf"
+   } 
    ])
 
   const display = info.map((item, index) => {
@@ -38,7 +45,9 @@ function Home(props) {
                Why: This project is a demonstration of PERN stack knowledge using React, PostgreSQL, Express, and NodeJS to build a fully functional site from scratch. This was not only an exercise in coding, but an exercise in collaboration and teamwork.
             </Typography>
          </ThemeProvider>
+         <Grid container spacing={3}>
          {display}
+         </Grid>
       </div>
     )
   }
