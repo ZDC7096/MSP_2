@@ -8,15 +8,15 @@ const theme = createTheme()
 
 theme.typography.h3 = {
   fontSize: 11,
-  color: '#FAF9F6'
+  color: '#00000'
 }
 
 theme.typography.h4 = {
   fontSize: 10,
-  color: '#FAF9F6'
+  color: '#00000'
 }
 
-
+//PULLING DATA AND CHECKING FOR ERRORS
 function PlaylistView() {
     const [fetchError, setFetchError] = useState(null)
     const [songsBruh, setSongs] = useState(null)
@@ -48,15 +48,18 @@ function PlaylistView() {
     
     return(
       
-        <div style={{minHeight: "100vh"}}>
+      <div id="yop" style={{minHeight: "100vh", backgroundColor: "#FCFCFC", marginLeft: "200px", marginRight:"200px", paddingTop:"20px"}}>
+        <h3>Your Playlist</h3>
 {songsBruh && (
     <div>
       <Grid container spacing={3} justify="left">
+
+   {/* MAPPING DATA INTO INDIVIDUAL CARDS      */}
 {songsBruh.map(song =>(
 
 
         <Grid item xs={"auto"}>
-            <Card style={{backgroundColor: "#121212"}} sx={{ display: 'flex', height: 100, maxWidth: 275, minWidth: 275 }}>
+            <Card style={{backgroundColor: "#F3F3F3"}} sx={{ display: 'flex', height: 100, maxWidth: 275, minWidth: 275 }}>
                 <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                     <CardContent sx={{ flex: '1 0 auto', height: 33 }}>
                         <ThemeProvider theme={theme}>
@@ -69,7 +72,20 @@ function PlaylistView() {
                         </ThemeProvider>
                     </CardContent>
                 <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
-                    <Button  variant="outlined" sx={{height:27.5, color:"red", borderColor: "red"}} >
+
+                  {/* Function to Delete data from database */}
+                    <Button onClick={ async function(){
+                        const {data, error} = await supabase
+                        .from('playlist')
+                        .delete()
+                        .eq("id", song.id)
+                        .select();
+                        setSongs(prevSong => {
+                          return prevSong.filter(sm => sm.id !== song.id)
+                        })
+                       }} 
+
+variant="outlined" sx={{height:27.5, color:"red", borderColor: "red"}} >
                         Remove
                     </Button>
                 </Box>
