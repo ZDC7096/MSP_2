@@ -1,4 +1,4 @@
-import { Grid } from '@mui/material'
+import { Grid, Box } from '@mui/material'
 import { useContext } from 'react'
 import { DataContext } from './Context/DataContext'
 import SongCard from './SongCard'
@@ -13,15 +13,14 @@ function Gallery(props) {
     })
 
     return (
-        <div>
-            <Grid container direction={"row"}
-            justifyContent={'center'}>
-                <Grid xs={6}>
+        <div >
+            <Box >
+                <Grid container spacing={3} justify="left">
                     {display}
                 </Grid>
-            </Grid>
+            </Box>
         </div>
     )
 }
 
-export default Gallery
+export default Gallery;

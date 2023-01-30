@@ -1,27 +1,57 @@
-const methodOverride = require('method-override')
-const express = require('express')
-const app = express()
+const express = require("express");
+const nodemailer = require("nodemailer");
+const app = express();
+const cors = require("cors");
+require("dotenv").config();
 
-// CONFIGURATION / MIDDLEWARE
-require('dotenv').config()
-app.use(express.json())
-app.set('views', __dirname + '/src/components')
-app.set('view engine', 'jsx')
-app.engine('jsx', require('express-react-views').createEngine())
-app.use(express.static('public'))
-app.use(express.urlencoded({ extended: true }))
-app.use(methodOverride('_method'))
+// middleware
+app.use(express.json());
+app.use(cors());
 
-// ROOT
-app.get('/home', (req, res) => {
-    res.render('playlist')
-})
+let transporter = nodemailer.createTransport({
+ service: "gmail",
+ auth: {
+   type: "OAuth2",
+   user: process.env.EMAIL,
+   pass: process.env.WORD,
+   clientId: process.env.OAUTH_CLIENTID,
+   clientSecret: process.env.OAUTH_CLIENT_SECRET,
+   refreshToken: process.env.OAUTH_REFRESH_TOKEN,
+ },
+});
+transporter.verify((err, success) => {
+ err
+   ? console.log(err)
+   : console.log(`=== Server is ready to take messages: ${success} ===`);
+});
 
-// LISTEN
-app.listen(process.env.PORT, () => {
-    console.log(`🎸 Jammin' on port: ${process.env.PORT}`)
-})
+app.post("/send", function (req, res) {
+ let mailOptions = {
+   from: `${req.body.mailerState.email}`,
+   to: process.env.EMAIL,
+   subject: `Message from: ${req.body.mailerState.email}`,
+   text: `${req.body.mailerState.message}`,
+ };
 
+ transporter.sendMail(mailOptions, function (err, data) {
+   if (err) {
+     res.json({
+       status: "fail",
+     });
+   } else {
+     console.log("== Message Sent ==");
+     res.json({
+       status: "success",
+     });
+   }
+ });
+});
 
+const port = 3000;
+app.listen(port, () => {
+ console.log(`Server is running on port: ${port}`);
+});
 
-
+// app.get('/', (req, res) => {
+//     res.send('Hello World!')
+//   })

@@ -1,22 +1,32 @@
 import React from 'react';
-import axios from 'axios';
-import {useEffect, useState} from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import './App.css';
-import { BrowserRouter, Routes, Route, Link, Router} from "react-router-dom"
 import Search from './components/Search'
 import PlaylistView from './components/PlaylistView';
-import DisplaySongs from './components/DisplaySongs';
-//package imports/requirements
-//require('dotenv').config();
+import ContactForm from './components/ContactForm';
+import NavBar from './components/NavBar'
+import Home from './components/Home'
+import Simon from './components/Simon'
 
 function App() {
+  
   return(
+    <div style={{backgroundColor: "#CDCDCD"}}>
+  <Router>
+    <NavBar/>
+<Routes>  
+<Route path="/simon" element ={<Simon/>}/>
+<Route path="/" element={<Home/>}/>
+<Route path="/search" element={<Search />} />
+<Route path="/playlistview" element={<PlaylistView />} />
+<Route path="/contact" element={<ContactForm />} />
+</Routes>
+</Router>
+</div>
 
-<Search/>
+
   )
 }
     
-
-
 export default App;
 
