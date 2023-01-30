@@ -30,6 +30,7 @@ function PlaylistView() {
           if (error) {
             setFetchError('Could not fetch the songs')
             setSongs(null)
+            
           }
   
           //SETS DATA =songs variable

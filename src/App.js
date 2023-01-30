@@ -6,7 +6,7 @@ import PlaylistView from './components/PlaylistView';
 import ContactForm from './components/ContactForm';
 import NavBar from './components/NavBar'
 import Home from './components/Home'
-
+import Simon from './components/Simon'
 
 function App() {
   
@@ -15,6 +15,7 @@ function App() {
   <Router>
     <NavBar/>
 <Routes>  
+<Route path="/simon" element ={<Simon/>}/>
 <Route path="/" element={<Home/>}/>
 <Route path="/search" element={<Search />} />
 <Route path="/playlistview" element={<PlaylistView />} />
