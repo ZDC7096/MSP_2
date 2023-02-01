@@ -92,9 +92,7 @@ function NavBar (){
                 <MenuItem onClick={handleCloseNavMenu}>
                   <Typography textAlign="center"><Link to="/contact">Contact</Link></Typography>
                 </MenuItem>
-                <MenuItem onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center"><Link to="/simon">SIMON</Link></Typography>
-                </MenuItem>
+            
               
             </Menu>
           </Box>
